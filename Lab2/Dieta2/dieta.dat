@@ -1,10 +1,13 @@
-set I := ver car fru;
+set I := ver car fru pes;
 set J := pro fer cal;
 
-param C :=
-ver 4
-car 10
-fru 7;
+param :
+      C minRisorsa :=
+ver   4        0.1
+car  10        0.2
+fru   7        0.3
+pes   3          3
+;
 
 param D :=
 pro 20
@@ -16,4 +19,6 @@ param A :
 ver   5   6   5
 car  15  10   3
 fru   4   5  12
-;
+pes  10  15   2
+;#draw.io 
+

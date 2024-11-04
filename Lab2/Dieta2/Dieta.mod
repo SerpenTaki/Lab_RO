@@ -5,7 +5,9 @@ param C{I};
 param D{J};
 param A{I,J};
 
-var x{I} >=0;
+param minRisorsa{I} default 0;
+
+var x{ris in I} >=minRisorsa[ris];
 
 minimize spesaTot: sum{i in I} C[i]*x[i];
 
