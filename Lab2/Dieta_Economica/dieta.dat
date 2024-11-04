@@ -1,0 +1,19 @@
+set I := ver car fru;
+set J := pro fer cal;
+
+param C :=
+ver 4
+car 10
+fru 7;
+
+param D :=
+pro 20
+fer 30
+cal 10;
+
+param A : 
+	pro fer cal :=
+ver   5   6   5
+car  15  10   3
+fru   4   5  12
+;

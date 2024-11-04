@@ -1,0 +1,22 @@
+set I := lat pat; #prodotti e definisco insieme
+set J := ett semi tu c; #risorse
+
+param P := lat 3000 pat 5000;
+#{I}; #profitto unitario
+
+param Q := 
+c 160
+semi 70
+ett 12
+tu 18;
+#{J}; #disponibilita
+param A := #{I, J}; #consumi unitari
+lat c 10
+pat c 20
+pat ett 1
+lat semi 7
+lat ett 1
+pat tu 3
+pat semi 0
+lat tu 0
+;

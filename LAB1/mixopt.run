@@ -1,0 +1,4 @@
+reset;
+model mixopt.mod;
+data mixopt.dat;
+solve;

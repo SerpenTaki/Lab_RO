@@ -1,0 +1,28 @@
+set I := tA tB;
+set J := dis nav tas log tra led;
+
+param P :=
+tA 3
+tB 6;
+
+param Q :=
+dis 10
+nav 9
+tas 21
+log 18
+tx 12
+led 13;
+
+param A :=
+tA dis 1
+tB dis 2
+tA nav 1
+tB nav 0
+tA tas 2
+tB tas 3
+tA log 2
+tB log 2
+tA tra 1
+tB tra 3
+tA led 1
+tA led 0;

@@ -1,0 +1,6 @@
+reset; #file di script questo poi richiama il file .mod nel percorso corrente visibile tramite cd
+model Dieta.mod;
+data dieta.dat;
+option solver xpress;
+solve;
+display I, J, C, A, x, spesaTot;

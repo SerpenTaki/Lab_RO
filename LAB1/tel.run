@@ -1,0 +1,5 @@
+reset;
+model tel.mod;
+option solver xpress;
+solve;
+display xA, xB, z;

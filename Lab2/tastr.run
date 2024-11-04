@@ -1,0 +1,6 @@
+reset;
+model mixopt.mod;
+data telec.dat;
+option solver gurobi;
+solve;
+display x, profit;
