@@ -1,0 +1,7 @@
+reset; #file di script questo poi richiama il file .mod nel percorso corrente visibile tramite cd
+model frigo.mod;
+data frigo.dat; 
+option solver gurobi;
+solve;
+display x, costo;
+#expand per vedere il modello che stiamo risolvendo
