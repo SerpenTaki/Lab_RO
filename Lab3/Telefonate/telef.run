@@ -1,0 +1,6 @@
+reset;
+model Telef.mod;
+data Telef.dat;
+option solver cplex;
+solve;
+display x, spesaTot;

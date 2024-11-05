@@ -1,0 +1,7 @@
+reset;
+model cup.mod;
+data cup.dat;
+option solver cplex;
+solve;
+display x, spesaTot;
+#expand per vedere il modello che stiamo risolvendo
