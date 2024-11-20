@@ -1,0 +1,59 @@
+reset;
+model PC.mod;
+data PC.dat;
+option solver gurobi;
+solve;
+
+printf "\n\nspendi %8.2f euri\n\n", costo;
+printf "Le quantità da trasportare sono:\n";
+
+printf "\n\n\n\n*** Scenario 0: nessuna protezione\n";
+let minFracTot := 0.0;
+let beta := 0.0;
+solve;
+param costo0;
+let costo0 := costo;
+display costo0;
+
+printf "\n\n\n\n*** Scenario 1: alpha 0.25 beta=0\n";
+let minFracTot := 0.25;
+let beta := 0.0;
+solve;
+param costo1;
+let costo1 := costo;
+
+
+printf "\n\n\n\n*** Scenario 2: alpha 0.25 beta=0.3\n";
+let minFracTot := 0.25;
+let beta := 0.3;
+solve;
+param costo2;
+let costo2 := costo;
+
+
+printf "\n\n\n\n*** Scenario 3: alpha 0.25 beta=0.4\n";
+let minFracTot := 0.25;
+let beta := 0.4;
+solve;
+param costo3;
+let costo3 := costo;
+
+printf "\n\n I costi sono:\n";
+printf "Scenario 0: %10.2f (base)\n", costo0;
+printf "Scenario 1: %10.2f (%10.2f in più)\n", costo1, costo1-costo0;
+printf "Scenario 2: %10.2f (%10.2f in più)\n", costo2, costo2-costo1;
+printf "Scenario 3: %10.2f (%10.2f in più)\n", costo3, costo3-costo2;
+
+display {i in S, j in B: x[i,j] > 0} x[i,j];
+fix x['Cina', 'CreditSuisse'] := 4000;
+solve;
+display {i in S, j in B: x[i,j] > 0} x[i,j];
+unfix x['Cina', 'CreditSuisse'] :=4000;
+solve;
+display {i in S, j in B: x[i,j] > 0} x[i,j];
+
+printf "\n\n\n*** FORNITURE ESCLUSIVE\n\n";
+
+for{i in S, j in B : x[i,j] > 0} {
+	printf "%12s -> %12s: %10.2f / %10.2f %c\n",i, j, x[i,j], b[j], if(x[i,j]==b[j]) then '*' else '' ;
+}

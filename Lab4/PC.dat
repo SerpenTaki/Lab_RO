@@ -1,0 +1,27 @@
+set S := Italia Cina Francia;
+set B := BancaIntesa UniCredit AntonVeneta CreditSuisse BancaCina;
+
+param : w a :=
+Italia 200 10000
+Cina 180 20000
+Francia 200 10000
+;
+
+param b := BancaIntesa 7100
+UniCredit 3400
+AntonVeneta 9700
+CreditSuisse 5200
+BancaCina 3050
+;
+
+param c : 
+		BancaIntesa	UniCredit	AntonVeneta	CreditSuisse	BancaCina =
+Italia	5.5	7.5	6.9	8.0	10.3
+Cina	15.0	14.3	13.0	16.4	5.0
+Francia	6.0	7.8	6.3	6.8	11.0
+;
+
+param stab_bill := Italia;
+param minFracTot := 0.25;
+param beta := 0.30;
+
